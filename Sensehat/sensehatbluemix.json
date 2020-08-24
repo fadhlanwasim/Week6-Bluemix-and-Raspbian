@@ -1,0 +1,48 @@
+[
+    {
+        "id": "e136b8fe.fd56b",
+        "type": "ui_gauge",
+        "z": "426e94ae.12b28c",
+        "name": "",
+        "group": "9ffcf19d.8fc1a8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "tekanan",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 600,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9ffcf19d.8fc1a8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Default",
+        "tab": "f7fc780a.373d5",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f7fc780a.373d5",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Environment",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

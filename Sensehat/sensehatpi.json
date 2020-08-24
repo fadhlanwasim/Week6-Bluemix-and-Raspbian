@@ -1,0 +1,111 @@
+[
+    {
+        "id": "5749c506.8bccfc",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "26094f71.db47b",
+        "type": "rpi-sensehatsim in",
+        "z": "5749c506.8bccfc",
+        "name": "",
+        "motion": false,
+        "env": true,
+        "stick": false,
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "f5e887a.e00fc78"
+            ]
+        ]
+    },
+    {
+        "id": "f5e887a.e00fc78",
+        "type": "delay",
+        "z": "5749c506.8bccfc",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 300,
+        "y": 120,
+        "wires": [
+            [
+                "7b48d429.c2814c"
+            ]
+        ]
+    },
+    {
+        "id": "7b48d429.c2814c",
+        "type": "function",
+        "z": "5749c506.8bccfc",
+        "name": "",
+        "func": "msg.payload = {\"Data\" : {\"Environment\" : msg.payload}};\nmsg.deviceType = \"senseHat\";\nmsg.deviceId =\"holygrailmaingate\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "6a2ba8f2.4e2e18",
+                "578a6017.33138"
+            ]
+        ]
+    },
+    {
+        "id": "6a2ba8f2.4e2e18",
+        "type": "debug",
+        "z": "5749c506.8bccfc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 640,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "578a6017.33138",
+        "type": "wiotp out",
+        "z": "5749c506.8bccfc",
+        "authType": "g",
+        "qs": "false",
+        "qsDeviceId": "",
+        "deviceKey": "455dc60c.0135b8",
+        "deviceType": "",
+        "deviceId": "",
+        "event": "event",
+        "format": "json",
+        "qos": "",
+        "name": "",
+        "x": 610,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "455dc60c.0135b8",
+        "type": "wiotp-credentials",
+        "z": "",
+        "name": "",
+        "org": "513ufx",
+        "serverName": "",
+        "devType": "Holy_Grail_Gateway",
+        "devId": "holygrailmaingate",
+        "keepalive": "60",
+        "cleansession": true,
+        "tls": "",
+        "usetls": false
+    }
+]

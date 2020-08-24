@@ -1,0 +1,120 @@
+[
+    {
+        "id": "a3f131ea.b44f",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d398f4e5.b9e848",
+        "type": "inject",
+        "z": "a3f131ea.b44f",
+        "name": "Normal",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Normal",
+        "payloadType": "str",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "fb27cfa1.8fafc8"
+            ]
+        ]
+    },
+    {
+        "id": "3acd93ef.710c8c",
+        "type": "inject",
+        "z": "a3f131ea.b44f",
+        "name": "Alert",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Alert",
+        "payloadType": "str",
+        "x": 90,
+        "y": 180,
+        "wires": [
+            [
+                "fb27cfa1.8fafc8"
+            ]
+        ]
+    },
+    {
+        "id": "fb27cfa1.8fafc8",
+        "type": "function",
+        "z": "a3f131ea.b44f",
+        "name": "format message",
+        "func": "msg.payload = { \"a\" : { \"indicator\" : msg.payload}};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "6c991107.df37d8"
+            ]
+        ]
+    },
+    {
+        "id": "6c991107.df37d8",
+        "type": "json",
+        "z": "a3f131ea.b44f",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 470,
+        "y": 140,
+        "wires": [
+            [
+                "e77ed1dd.38b818"
+            ]
+        ]
+    },
+    {
+        "id": "e77ed1dd.38b818",
+        "type": "ibmiot out",
+        "z": "a3f131ea.b44f",
+        "authentication": "boundService",
+        "apiKey": "",
+        "outputType": "cmd",
+        "deviceId": "raspberrypiOS",
+        "deviceType": "Device",
+        "eventCommandType": "statusindicator",
+        "format": "json",
+        "data": "{ }",
+        "qos": 0,
+        "name": "IBM IoT",
+        "service": "registered",
+        "x": 620,
+        "y": 140,
+        "wires": []
+    }
+]

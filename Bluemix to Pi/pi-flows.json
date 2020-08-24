@@ -1,0 +1,57 @@
+[
+    {
+        "id": "d97f9c90.c181c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8cb37749.7da968",
+        "type": "wiotp in",
+        "z": "d97f9c90.c181c",
+        "authType": "d",
+        "deviceKey": "af9d32e6.4a661",
+        "deviceType": "",
+        "deviceId": "",
+        "command": "+",
+        "commandType": "g",
+        "qos": 0,
+        "name": "",
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "b521aa05.ca9e88"
+            ]
+        ]
+    },
+    {
+        "id": "b521aa05.ca9e88",
+        "type": "debug",
+        "z": "d97f9c90.c181c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 400,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "af9d32e6.4a661",
+        "type": "wiotp-credentials",
+        "z": "",
+        "name": "",
+        "org": "513ufx",
+        "serverName": "",
+        "devType": "Gateway",
+        "devId": "raspberrypiGW",
+        "keepalive": "60",
+        "cleansession": true,
+        "tls": "",
+        "usetls": false
+    }
+]
